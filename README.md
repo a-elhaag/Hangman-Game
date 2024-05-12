@@ -22,7 +22,13 @@ To run the Hangman game, follow these steps:
 3. Build the solution to restore NuGet packages and compile the code.
 4. Run the application by pressing F5 or clicking the "Start" button in Visual Studio.
 
-##OR Simply Download Hangman Game.exe
+## OR
+
+Get started with the fun right away!
+
+[Download Hangman.exe for Windows]([https://github.com/at2nothing/Hangman-Game/blob/master/Hangman%20Game.exe]) 
+
+
 
 ## Dependencies
 
