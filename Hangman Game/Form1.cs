@@ -220,7 +220,8 @@ namespace Hangman_Game
                     {
                         label3.ForeColor = Color.Red;
                         label3.Text = "You lost! The word was: " + word;
-                        
+                        button1.Enabled = false;
+                        textBox1.Enabled = false;
                     }
                 }
             }
@@ -233,11 +234,6 @@ namespace Hangman_Game
             {
                 Textboxenter();
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
