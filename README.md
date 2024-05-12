@@ -37,9 +37,10 @@ The Hangman game has the following dependencies:
 - .NET Framework 4.7.2 or later
 - Windows Forms
 
-## Contributing
+## Contributors
+Anas Elhaag
+Nada Elmokdem
 
-Contributions to the Hangman game are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
 ## License
 
