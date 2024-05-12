@@ -26,7 +26,7 @@ To run the Hangman game, follow these steps:
 
 Get started with the fun right away!
 
-[Download Hangman.exe for Windows]([https://github.com/at2nothing/Hangman-Game/blob/master/Hangman%20Game.exe]) 
+## Download: [Hangman.exe for Windows](Hangman%20Game.exe) 
 
 
 
