@@ -117,20 +117,28 @@ namespace Hangman_Game
         }
         string GetRandomWord()// this function gets all the random words from that url 
         {
-
             WebClient wc = new WebClient();
-            string wordlist = wc.DownloadString("http://www.puzzlers.org/pub/wordlists/pocket.txt");// we get all words from this url
-            string[] words = wordlist.Split('\n');
+            string wordlist = wc.DownloadString("https://raw.githubusercontent.com/at2nothing/Hangman-Game/master/words.csv");
+
+            // Split the CSV into individual words using a comma as the delimiter
+            string[] words = wordlist.Split(',');
+
+            // Create a random number generator
             Random ran = new Random();
-            return words[ran.Next(0, words.Length - 1)];
+
+            // Select and return a random word from the array (excluding empty entries)
+            string selectedWord = words[ran.Next(0, words.Length)];
+            while (string.IsNullOrWhiteSpace(selectedWord))
+            {
+                selectedWord = words[ran.Next(0, words.Length)];
+            }
+            return selectedWord;
         }
         private void Form1_Shown(object sender, EventArgs e)
         {
             /*
              * The next 5 lines are code for drawing the lamppost as soon as the program is run 
              */
-            button1.Text = "Hard";
-            button2.Text = "Easy";
             Graphics g = panel1.CreateGraphics();// for drawing on panel
             Pen p = new Pen(Color.Brown, 10);// for pen
             g.DrawLine(p, new Point(130, 248), new Point(130, 10));//draws vertical post
@@ -199,10 +207,16 @@ namespace Hangman_Game
                         for (int i = 0; i < labels.Count; i++)
                         {
                             if (labels[i].Text == "_")
-                                label3.Text= "Hint: " + word[i];
+                            {
+                                label3.ForeColor = Color.Yellow;
+                                label3.Text= "Hint";
+                                labels[i].ForeColor = Color.Yellow;
+                                labels[i].Text = word.ToCharArray()[i].ToString();
+                                break;
+                            }
                         }
                     }
-                    if (amount == 8)
+                    if (amount == 9)
                     {
                         label3.ForeColor = Color.Red;
                         label3.Text = "You lost! The word was: " + word;
@@ -230,6 +244,7 @@ namespace Hangman_Game
         {
             Application.Restart();
         }
+
     }
 }
 
