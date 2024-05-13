@@ -39,6 +39,7 @@ The Hangman game has the following dependencies:
 
 ## Contributors
 Anas Elhaag
+
 Nada Elmokdem
 
 
