@@ -113,7 +113,7 @@ namespace Hangman_Game
                 labels[i].BringToFront();// so that the word appears ebven though there are words under it
                 labels[i].CreateControl();// Button is created
             }
-            label1.Text = "Word Length" +(chars.Length - 1).ToString() ;// this shows the label "Word Length" to show how many letters are in the word
+            label1.Text = "Word Length" +(chars.Length).ToString() ;// this shows the label "Word Length" to show how many letters are in the word
         }
         string GetRandomWord()// this function gets all the random words from that url 
         {
@@ -133,6 +133,8 @@ namespace Hangman_Game
                 selectedWord = words[ran.Next(0, words.Length)];
             }
             return selectedWord;
+
+            
         }
         private void Form1_Shown(object sender, EventArgs e)
         {
@@ -208,14 +210,21 @@ namespace Hangman_Game
                         {
                             if (labels[i].Text == "_")
                             {
-                                label3.ForeColor = Color.Yellow;
+                                label3.ForeColor = Color.Purple;
                                 label3.Text= "Hint";
-                                labels[i].ForeColor = Color.Yellow;
+                                labels[i].ForeColor = Color.Purple;
                                 labels[i].Text = word.ToCharArray()[i].ToString();
                                 break;
                             }
                         }
                     }
+
+                    if (amount== 8)
+                    {
+                        label3.ForeColor = Color.Yellow;
+                        label3.Text = "LAST CHANCE ";
+                    }
+
                     if (amount == 9)
                     {
                         label3.ForeColor = Color.Red;
